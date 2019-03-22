@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#head{
+    width: 100%;
+    height: 60px;
+    background-color: aqua;
+}
+#content{
+    width: 100%;
+    height: 550px;
+    background-color: lavender;
+}
+#footer{
+    width: 100%;
+    height: 47px;
+    background-color: ivory;
+    float: left;
+}
+.fontFooter{
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-top: 10px;
+}
+.logo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
+    padding: 15px 0 15px 10px ;
+}
+.contentLeft{
+    width: 80%;
+    height: 550px;
+    float: left;
+    background-color: ghostwhite;
+}
+.contentRight{
+    width: 20%;
+    height: 550px;
+    float: left;
+    background-color: honeydew;
+}
+.contentPertanyaan{
+    width: 875px;
+    height: 250px;
+    margin: 25px 2px 2px 10%;
+    float: left;
+    background: url(../img/bg1.jpg);
+}
+.contentJawaban{
+    width: 80%;
+    height: 150px;
+    margin: 2px 2px 2px 10%;
+    float: left;
+}
+.button{
+    width: 40%;
+    height: 10px;
+    background-color: mediumaquamarine;
+    border: none;
+    padding: 25px 15px;
+    margin-top:5px;
+    margin-left:5%; 
+    text-decoration: none;
+    cursor: pointer;
+    float: left;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+.button:hover{
+    background-color: aquamarine;
+    color: blue;
+    font-weight: bold;
+}
+.alive{
+    width: 80%;
+    height: 30px;
+    padding: 10px 10px 10px 10px;
+    margin: 5% 8%;
+    background-color: linen;
+}
+.score{
+    width: 80%;
+    height: 30px;
+    padding: 10px 10px 10px 10px;
+    margin: 5% 8%;
+    background-color: linen;
+}
+.textQuestion{
+    font-size: 38px;
+    font-weight: bold;
+    color: ghostwhite;
+    text-align: center;
+    margin-top: 5%; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.textScore{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+

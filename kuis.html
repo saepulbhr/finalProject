@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+
+    
+    
+</head>
+<body>
+    <div id="head">
+        <div class="logo">
+             
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="contentLeft">
+            <div class="contentPertanyaan textQuestion" id="hasilPertanyaan">
+            
+            </div>
+             <div class="contentJawaban">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <div class="button" id="jawabA"></div>
+                            <div class="button" id="jawabB"></div>
+                            <div class="button" id="jawabC"></div>
+                            <div class="button" id="jawabD"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="contentRight">
+           <div class="alive" style="">
+               <div style="padding-bottom: 5px;" id="alive" ><img src='./img/alive.png' alt='' class="hidup"><img src='./img/alive.png' alt='' class="hidup"><img src='./img/alive.png' alt='' class="hidup">
+               </div>
+           </div>
+           <div class="score textScore" id="score">
+           </div>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div class="fontFooter">
+            Kuis &copy 2019
+        </div>
+    </div>
+
+</body>
+
+<script>
+    
+    var pertanyaan = ["Mana yang termasuk tag HTML ?",
+                      "Manakah yang bukan termasuk Tipe Data ?",
+                      "Apa Kepanjangan dari CSS ?",
+                      "Apa fungsi dari tag <br> ?",
+                      "Apa fungsi tag <i> ?"]
+                    
+    var pilihan = [
+                    ["<a>","<?php ?>","<% %>","Salah Semua"],
+                    ["String","Number","<i>","Boolean"],
+                    ["Creative Style Sheets", "Colorful Style Sheets","Computer Style Sheet", "Cascading Style Sheets"],
+                    ["Membuat garis bantu", "Membuat Garis Lurus","Membuat baris baru","Membuat baris-bari"],
+                    ["Membuat tulisan besar","Membuat tulisan miring","Membuat tulisan kecil","Membuat tulisan sedang"]
+                  ];
+    var jawaban = ["<a>","<i>","Cascading Style Sheets","Membuat baris baru","Membuat tulisan miring"]
+    var nilai = 0
+
+    document.getElementById('hasilPertanyaan').innerHTML = pertanyaan[0]
+    document.getElementById('jawabA').innerText = pilihan[0][0]
+    document.getElementById('jawabB').innerText = pilihan[0][1]
+    document.getElementById('jawabC').innerText = pilihan[0][2]
+    document.getElementById('jawabD').innerText = pilihan[0][3]
+    document.getElementById('score').innerText = "Score : " + (nilai)
+
+    document.getElementById('jawabA').addEventListener("click", function(){
+        clickJawaban(document.getElementById('jawabA').innerText)
+    })
+    document.getElementById('jawabB').addEventListener("click", function(){
+        clickJawaban(document.getElementById('jawabB').innerText)
+    })
+    document.getElementById('jawabC').addEventListener("click", function(){
+        clickJawaban(document.getElementById('jawabC').innerText)
+    })
+    document.getElementById('jawabD').addEventListener("click", function(){
+        clickJawaban(document.getElementById('jawabD').innerText)
+    })
+
+    
+//    var pilih = document.getElementById('jawabA').innerText = pilihan[0][0]
+   var benarSatu = jawaban[0]
+   var benarDua = jawaban[1]
+   var benarTiga = jawaban[2]
+   var benarEmpat = jawaban[3]
+   var benarLima = jawaban[4]    
+    
+
+    function clickJawaban(pilih){
+        if(pilih == benarSatu){
+            alert("Betul !!")
+            document.getElementById('hasilPertanyaan').innerHTML = pertanyaan[1]
+            document.getElementById('jawabA').innerText = pilihan[1][0]
+            document.getElementById('jawabB').innerText = pilihan[1][1]
+            document.getElementById('jawabC').innerText = pilihan[1][2]
+            document.getElementById('jawabD').innerText = pilihan[1][3]
+            document.getElementById('score').innerText = "Score : " + (nilai += 20)
+        }else if(pilih == benarDua){
+            alert("Betul !!")
+            document.getElementById('hasilPertanyaan').innerHTML = pertanyaan[2]
+            document.getElementById('jawabA').innerText = pilihan[2][0]
+            document.getElementById('jawabB').innerText = pilihan[2][1]
+            document.getElementById('jawabC').innerText = pilihan[2][2]
+            document.getElementById('jawabD').innerText = pilihan[2][3]
+            document.getElementById('score').innerText = "Score : " + (nilai += 20)
+        }else if(pilih == benarTiga){
+            alert("Betul !!")
+            document.getElementById('hasilPertanyaan').innert = pertanyaan[3]
+            document.getElementById('jawabA').innerText = pilihan[3][0]
+            document.getElementById('jawabB').innerText = pilihan[3][1]
+            document.getElementById('jawabC').innerText = pilihan[3][2]
+            document.getElementById('jawabD').innerText = pilihan[3][3]
+            document.getElementById('score').innerText = "Score : " + (nilai += 20)
+        }else if(pilih == benarEmpat){
+             alert("Betul !!")
+            document.getElementById('hasilPertanyaan').innerText = pertanyaan[4]
+            document.getElementById('jawabA').innerText = pilihan[4][0]
+            document.getElementById('jawabB').innerText = pilihan[4][1]
+            document.getElementById('jawabC').innerText = pilihan[4][2]
+            document.getElementById('jawabD').innerText = pilihan[4][3]
+            document.getElementById('score').innerText = "Score : " + (nilai += 20)
+        }else if(pilih == benarLima){
+             alert("Betul !!")
+             document.getElementById('score').innerText = "Score : " + (nilai += 20)
+        }else{
+           var indk = document.getElementById('alive')
+           var hdp = document.getElementsByClassName('hidup')
+               indk.removeChild(indk.childNodes[0])
+               
+           alert('salah')
+           if(hdp.length == 0){
+               alert("game over")
+               location.replace("index.html")
+           }
+        }
+    }
+
+
+</script>
+<script src="kuis.js"></script>
+
+<!-- <script>
+        // var pertanyaan = {
+        //     soalSatu : 'mana yang termasuk tag HTML ?',
+        //     jawabanPilihanSatu : ["<p>","<?php ?>","<%php %>","Semua Jawaban Salah"],
+        //     soalDua : 'Apa tag untuk membuat suatu pargraf ?',
+        //     jawabanPilihanDua : ["<p>","<i>","<b>","<br>"],
+        //     jawaban : ["<p>"]
+        // }
+
+        // document.getElementById('hasilPertanyaan').innerHTML = pertanyaan.soalSatu
+        // document.getElementById('jawabA').innerText =  pertanyaan.jawabanPilihanSatu[0]
+        // document.getElementById('jawabB').innerText =  pertanyaan.jawabanPilihanSatu[1]
+        // document.getElementById('jawabC').innerText =  pertanyaan.jawabanPilihanSatu[2]
+        // document.getElementById('jawabD').innerText =  pertanyaan.jawabanPilihanSatu[3]
+
+        // document.getElementById('hasilPertanyaan').innerHTML = pertanyaan.soalDua
+        // document.getElementById('jawabA').innerText = "A. " + pertanyaan.jawabanDua[0]
+        // document.getElementById('jawabB').innerText = "B. " + pertanyaan.jawabanDua[1]
+        // document.getElementById('jawabC').innerText = "C. " + pertanyaan.jawabanDua[2]
+        // document.getElementById('jawabD').innerText = "D. " + pertanyaan.jawabanDua[3]
+        
+        // console.log(document.getElementById('jawabA').innerText = pertanyaan.jawabanPilihanSatu[0])
+    
+   
+
+</script> -->
+</html>
